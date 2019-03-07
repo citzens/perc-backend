@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
+from . views import ProductDetailView, ProductListView
 
 urlpatterns = [
-    path('<>', include('rest_framework.urls')),
+    path('', ProductListView.as_view()),
+   path('<pk>', ProductDetailView.as_view()),
 
 ]
